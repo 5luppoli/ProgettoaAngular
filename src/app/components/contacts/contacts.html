@@ -1,7 +1,7 @@
 <div class="contacts">
     <input type="text" [(ngModel)]="searchQuery" placeholder="Search contacts...">
     <ul>
-        <li *ngFor="let contact of getFilteredContacts()">
+        <li (click)="togglePriority(contact)" *ngFor="let contact of getFilteredContacts()">
             <span>{{ contact.name }}</span>
             <span>{{ contact.phone }}</span>
             <span *ngIf="contact.priority">★</span>

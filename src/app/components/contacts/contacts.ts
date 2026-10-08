@@ -21,9 +21,32 @@ export class contactsComponent {
   ]
 
 getFilteredContacts(): Contact[] {
-  return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
-}}
+  return this.contacts
+  .filter
+  (contact => contact.name
+    .toLowerCase()
+    .includes
+  (this.searchQuery.toLowerCase())
+  )
+  .sort
+  ((a, b) => 
+    {
+    if (a.priority && !b.priority) {
+      return -1;
+    } else if (!a.priority && b.priority) {
+      return 1;
+    } else {
+      return a.name.localeCompare(b.name);
+    }
+    }
+  )
+  //.sort ((a,b) => a.name.localeCompare(b.name)) 
+}
 
+togglePriority(contact: Contact): void {
+  contact.priority = !contact.priority;
+}
+}
 
 interface Contact {
   name: string;
