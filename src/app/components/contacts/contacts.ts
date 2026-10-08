@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
+  standalone: false,
   selector: 'app-contacts',
   templateUrl: './contacts.html',
   styleUrls: ['./contacts.css']
