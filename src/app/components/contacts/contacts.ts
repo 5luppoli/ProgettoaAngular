@@ -46,6 +46,9 @@ getFilteredContacts(): Contact[] {
 togglePriority(contact: Contact): void {
   contact.priority = !contact.priority;
 }
+
+Imageurl: string = 'https://www.w3schools.com/howto/img_avatar.png';
+
 }
 
 interface Contact {

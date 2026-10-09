@@ -2,6 +2,7 @@
     <input type="text" [(ngModel)]="searchQuery" placeholder="Search contacts...">
     <ul>
         <li (click)="togglePriority(contact)" *ngFor="let contact of getFilteredContacts()">
+            <img [src]="Imageurl" alt="Avatar">
             <span>{{ contact.name }}</span>
             <span>{{ contact.phone }}</span>
             <span *ngIf="contact.priority">★</span>
